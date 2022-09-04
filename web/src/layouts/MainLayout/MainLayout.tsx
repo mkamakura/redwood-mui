@@ -1,8 +1,6 @@
 import MenuIcon from '@mui/icons-material/Menu'
 import { AppBar, Box, IconButton, Toolbar } from '@mui/material'
 
-import { useAuth } from '@redwoodjs/auth'
-
 type MainLayoutProps = {
   children?: React.ReactNode
 }

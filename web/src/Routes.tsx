@@ -1,34 +1,10 @@
-import { createTheme, ThemeProvider } from '@mui/material'
-import { purple, red } from '@mui/material/colors'
+import { ThemeProvider } from '@mui/material'
 
 import { useAuth } from '@redwoodjs/auth'
 import { Router, Route, Set } from '@redwoodjs/router'
 
 import MainLayout from 'src/layouts/MainLayout'
-
-const moderatorTheme = createTheme({
-  palette: {
-    primary: {
-      main: purple[500],
-    },
-  },
-})
-
-const adminTheme = createTheme({
-  palette: {
-    primary: {
-      main: red[500],
-    },
-  },
-})
-
-const defaultTheme = createTheme({})
-
-const getCustomTheme = (role: string) => {
-  if (role === 'moderator') return moderatorTheme
-  if (role === 'admin') return adminTheme
-  return defaultTheme
-}
+import { defaultTheme, getCustomTheme } from 'src/styles/theme'
 
 const Routes = () => {
   const { loading, isAuthenticated, currentUser } = useAuth()
